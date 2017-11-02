@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PetsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Pets">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cats" Type="int" Nullable="false" />
+          <Property Name="Cat Breeds" Type="nchar" MaxLength="50" />
+          <Property Name="Dogs" Type="int" Nullable="false" />
+          <Property Name="Dog Breeds" Type="nchar" MaxLength="50" />
+          <Property Name="Fish" Type="int" Nullable="false" />
+          <Property Name="Fish Breeds" Type="nchar" MaxLength="40" />
+          <Property Name="Rodents" Type="int" />
+          <Property Name="Rodent Breeds" Type="nchar" MaxLength="40" />
+        </EntityType>
+        <EntityContainer Name="PetsModelStoreContainer">
+          <EntitySet Name="Pets" EntityType="Self.Pets" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PetsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Pet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cats" Type="Int32" Nullable="false" />
+          <Property Name="Cat_Breeds" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Dogs" Type="Int32" Nullable="false" />
+          <Property Name="Dog_Breeds" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Fish" Type="Int32" Nullable="false" />
+          <Property Name="Fish_Breeds" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Rodents" Type="Int32" />
+          <Property Name="Rodent_Breeds" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PetsEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Pets" EntityType="Self.Pet" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PetsModelStoreContainer" CdmEntityContainer="PetsEntities1">
+          <EntitySetMapping Name="Pets">
+            <EntityTypeMapping TypeName="PetsModel.Pet">
+              <MappingFragment StoreEntitySet="Pets">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Cats" ColumnName="Cats" />
+                <ScalarProperty Name="Cat_Breeds" ColumnName="Cat Breeds" />
+                <ScalarProperty Name="Dogs" ColumnName="Dogs" />
+                <ScalarProperty Name="Dog_Breeds" ColumnName="Dog Breeds" />
+                <ScalarProperty Name="Fish" ColumnName="Fish" />
+                <ScalarProperty Name="Fish_Breeds" ColumnName="Fish Breeds" />
+                <ScalarProperty Name="Rodents" ColumnName="Rodents" />
+                <ScalarProperty Name="Rodent_Breeds" ColumnName="Rodent Breeds" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

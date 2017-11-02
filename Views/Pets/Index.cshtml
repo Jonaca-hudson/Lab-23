@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebApplication2.Controllers.Pet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cats)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_Breeds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dogs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dog_Breeds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fish)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fish_Breeds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rodents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rodent_Breeds)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cats)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_Breeds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dogs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dog_Breeds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fish)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fish_Breeds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rodents)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rodent_Breeds)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,82 @@
+﻿@model WebApplication2.Controllers.Pet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cat_Breeds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cat_Breeds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dogs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dogs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog_Breeds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dog_Breeds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fish_Breeds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fish_Breeds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rodents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rodents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rodent_Breeds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rodent_Breeds)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
